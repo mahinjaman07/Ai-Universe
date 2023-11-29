@@ -1,0 +1,121 @@
+*{
+    margin: 0%;
+    padding: 0%;
+
+}
+
+.header h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+}
+.button{
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.body-section{
+    width: 95%;
+    margin: 0px auto;
+}
+#container{
+    width: 80%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    align-items: center !important;
+    gap: 20px;
+    justify-content: center !important;
+
+    
+}
+.card{
+
+    width: 100% !important;
+}
+#details-btn{
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid rgb(82, 122, 215);
+    transition: all 0.8s;
+
+}
+#details-btn:hover{
+    background-color: rgba(137, 137, 234, 0.746);
+    padding: 10px;
+    border-radius: 50%;
+    color: rgb(0, 0, 0);
+    
+}
+
+/* Spinner Css */
+.loader {
+    width: 206px;
+    height: 112px;
+    display: block;
+    margin: 30px auto;
+    background-image: linear-gradient(#000000 50px, transparent 0), linear-gradient(#000000 50px, transparent 0), linear-gradient(#000000 50px, transparent 0), linear-gradient(#000000 50px, transparent 0), radial-gradient(circle 14px, #000000 100%, transparent 0);
+    background-size: 48px 15px, 15px 35px, 15px 35px, 25px 15px, 28px 28px;
+    background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
+    background-repeat: no-repeat;
+    position: relative;
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border: 6px solid #000000;
+    border-radius: 50%;
+    left: -45px;
+    top: -10px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#000000 64px, transparent 0), linear-gradient(#000000 66px, transparent 0), radial-gradient(circle 4px, #000000 100%, transparent 0);
+    background-size: 40px 1px, 1px 40px, 8px 8px;
+    background-position: center center;
+    box-sizing: border-box;
+    animation: rotation 0.3s linear infinite;
+}
+
+.loader::before {
+    left: 25px;
+    top: 60px;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+#modal{
+    background-color: aquamarine;
+    height: 500px;
+    padding: 30px;
+}
+.modalDiv{
+    background-color: aqua;
+    position: relative;
+}
+.text-end{
+    background-color: rgb(253, 104, 104);
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+
