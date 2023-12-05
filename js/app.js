@@ -31,26 +31,25 @@ console.log(data);
     <div class="modal-body row gap-3 p-3 justify-content-center align-items-center ">
        <div class=" col col-5 details-1 border rounded p-3" style="background-color: rgb(252, 215, 234); line-height: 20px; gap: 50px">
        <p class="fw-bold">${data?.description}</p>
-       <ul class="d-flex gap-1 ">${data?.pricing ? data?.pricing?.map(price => `<li>${price.price} ${price.plan}</li> ` ).join(' '):'Data Not Found'}       
+       <ul class="pricing-container">${data?.pricing ? data?.pricing?.map(price => `<li>${price.price} ${price.plan}</li> ` ).join(' '):'Data Not Found'}       
        </ul>
 
-       <div class="d-flex justify-content-space-between align-items-center">
-       
-       <div>
-           <ul>${Object?.values(data?.features).map(features => features.feature_name ? `<li>${features.feature_name}</li>` : 'No Data Founded').join(' ')}</ul>
-       </div>
-
-       <div class="pt-3">
-          <ul>${data.integrations? data.integrations.map(integration=> `<li>${integration}</li>`).join(' '):'No Data Available'}</ul>
-       </div>
-
-       
+       <div class="d-flex gap-3  pt-3 justify-content-space-between align-items-center">
+         <div>
+            <h4 class="fw-bold">Features</h4>
+            <ul class="modal-li-container">${Object?.values(data?.features).map(features => features.feature_name ? `<li>${features.feature_name}</li>` : 'No Data Founded').join(' ')}</ul>
+         </div>
+         <div>
+            <h4 class="fw-bold">Integrations</h4>
+            <ul class="modal-li-container">${data.integrations ? data.integrations.map(integration => `<li>${integration}</li>`).join(' ') : 'No Data Available'}</ul>
+         </div> 
        </div>
 
        </div>
 
        <div class="col col-5 details-2 d-flex flex-column align-items-center border rounded p-3">
-        <img style="height: 245px;" src="${data?.image_link[0]}" class="card-img-top rounded" alt="${data?.tool_name}">
+        <img style="height: 245px;" src="${data?.image_link[0]}" class="card-img-top rounded position-relative" alt="${data?.tool_name}">
+        <p class="accuracy">${data?.accuracy.score ? `${data?.accuracy.score}% accuracy` : ''}</p>
         <p class="fw-bold">${data?.input_output_examples[0]?.input}</p>
         <p>${data?.input_output_examples[0]?.output}</p>
        </div>
