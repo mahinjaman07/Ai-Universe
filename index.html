@@ -32,7 +32,7 @@
     <section>
         
  <!-- Modal -->
-        <div onclick="closeBtn()" class="modal fade modal-lg" id="aiDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div onclick="closeBtn()" class="modal fade modal-xl" id="aiDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" id="modal-container">
 
             </div>
@@ -46,3 +46,21 @@
     <script src="js/app.js"></script>
 </body>
 </html>
+
+
+<!-- <div class="d-flex gap-1 ">${data?.pricing?.map(price => {
+    const priceDiv = document.createElement('div');
+
+    priceDiv.classList.add('justify-content-center');
+    priceDiv.classList.add('align-items-center');
+    priceDiv.classList.add('rounded');
+    priceDiv.classList.add('d-flex');
+    priceDiv.classList.add('bg-warning');
+    priceDiv.classList.add('bg-warning');
+    priceDiv.classList.add('text-center');
+    priceDiv.classList.add('p-4');
+    priceDiv.innerHTML = `<p class="text-center">${price?.price} ${price?.plan}</p>`;
+    return priceDiv.outerHTML;
+    }).join('')
+    }
+</div> -->

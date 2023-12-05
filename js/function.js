@@ -8,7 +8,7 @@ const apiAllData = async limit =>{
     const data = await res.json();
     displayData(limit ,data.data.tools);
 };
-
+apiAllData(6);
 const displayData = (limit, allData)=>{
         if (limit > 5 && allData.length > 10 ){
             const displayAiData = allData.slice(0, limit);
@@ -30,7 +30,7 @@ const displayData = (limit, allData)=>{
 };
 
 
-apiAllData(6);
+
 
 const seeMoreBtn = limit =>{
     spinner.classList.remove('d-none');

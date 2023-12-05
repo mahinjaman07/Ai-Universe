@@ -22,22 +22,37 @@ const apiDiv = (data) =>{
 
 
 const aiModalDiv = data =>{
-  console.log(data);
-   const div = document.createElement('div');
+console.log(data);
+  const div = document.createElement('div');
   div.classList.add('modal-content');
   div.classList.add('modalDiv');
    div.innerHTML =`
-
-    <div class="text-end">
-        <button onclick="closeBtn()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
+    <i onclick=" closeBtn()" class="fa-solid fa-xmark text-end" data-bs-dismiss="modal" aria-label="Close"></i>
     <div class="modal-body row gap-3 p-3 justify-content-center align-items-center ">
-       <div class="col col-5 details-1 border rounded">
+       <div class=" col col-5 details-1 border rounded p-3" style="background-color: rgb(252, 215, 234); line-height: 20px; gap: 50px">
        <p class="fw-bold">${data?.description}</p>
+       <ul class="d-flex gap-1 ">${data?.pricing ? data?.pricing?.map(price => `<li>${price.price} ${price.plan}</li> ` ).join(' '):'Data Not Found'}       
+       </ul>
+
+       <div class="d-flex justify-content-space-between align-items-center">
+       
+       <div>
+           <ul>${Object?.values(data?.features).map(features => features.feature_name ? `<li>${features.feature_name}</li>` : 'No Data Founded').join(' ')}</ul>
        </div>
-       <div class="col col-5 details-2 d-flex flex-column align-items-center border rounded">
+
+       <div class="pt-3">
+          <ul>${data.integrations? data.integrations.map(integration=> `<li>${integration}</li>`).join(' '):'No Data Available'}</ul>
+       </div>
+
+       
+       </div>
+
+       </div>
+
+       <div class="col col-5 details-2 d-flex flex-column align-items-center border rounded p-3">
         <img style="height: 245px;" src="${data?.image_link[0]}" class="card-img-top rounded" alt="${data?.tool_name}">
         <p class="fw-bold">${data?.input_output_examples[0]?.input}</p>
+        <p>${data?.input_output_examples[0]?.output}</p>
        </div>
     </div>
    `

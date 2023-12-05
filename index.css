@@ -106,16 +106,17 @@
     padding: 30px;
 }
 .modalDiv{
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     position: relative;
 }
 .text-end{
-    background-color: rgb(253, 104, 104);
+    background-color: rgb(245, 107, 107);
     position: absolute;
     right: -15px;
     top: -15px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 50%;
+    z-index: 3 !important;
+    
 }
-
 
